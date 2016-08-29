@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Maza.vn - Checkout-2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+		<div id="checkoutPage">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="header">
+							<a href="" class="logo">
+								<object style="z-index: -1; pointer-events: none;" data="images/logo-checkout.svg" type="image/svg+xml"> </object>
+							</a>
+							<a href="tel:19000378" class="continueShopping">
+								<i class="fa fa-phone" aria-hidden="true"></i>1900 0378
+								<span>9h - 22h, cả T7 & CN</span>
+							</a>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<ul class="progressBar">
+							<li><a href="">Đăng nhập</a></li>
+							<li class="active"><a href="">Thông tin giao hàng</a></li>
+							<li><a href="">Hoàn tất</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<h2>Thông tin giao hàng</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-6">
+						<h4>Thông tin giao hàng chi tiết</h4>
+						<form action="" id="addressInfoForm">
+							<div class="col-xs-12 col-md-6">
+								<label>Họ và tên</label>
+								<input type="text" placeholder="Nhập họ và tên">
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<label>Số điện thoại</label>
+								<input type="text" placeholder="Nhập số điện thoại">
+							</div>
+							<div class="col-xs-12">
+								<label>Địa chỉ giao hàng</label>
+								<input type="text" placeholder="Nhập địa chỉ giao hàng">
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<label>Tỉnh thành</label>
+								<div class="customSelect">
+									<span class="currentOption" onclick="showSelect(this);">-- Chọn tỉnh thành --</span>
+									<ul class="listOption">
+										<li><span>1</span></li>
+										<li><span>2</span></li>
+										<li><span>3</span></li>
+										<li><span>4</span></li>
+										<li><span>5</span></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<label>Quận / Huyện</label>
+								<div class="customSelect">
+									<span class="currentOption" onclick="showSelect(this);">-- Chọn Quận / Huyện --</span>
+									<ul class="listOption">
+										<li><span>1</span></li>
+										<li><span>2</span></li>
+										<li><span>3</span></li>
+										<li><span>4</span></li>
+										<li><span>5</span></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-xs-12">
+								<label for="">Ghi chú</label>
+								<textarea name="" id="" placeholder="Nhập ghi chú"></textarea>
+							</div>
+							<div class="col-xs-12">
+								<input type="checkbox" id="rememberInfo">
+								<label for="rememberInfo">Ghi nhớ thông tin</label>
+							</div>
+							<div class="col-xs-12">
+								<input type="button" value="Đặt hàng">
+							</div>
+						</form>
+					</div>
+					<div class="col-xs-12 col-md-5 col-md-offset-1">
+						<h4>Giỏ hàng</h4>
+						<div class="cartCheckOutRight">
+							<div class="row rowPCheckOut">
+								<div class="col-xs-4 col-sm-3">
+									<img src="images/img-cat.jpg" alt="">
+								</div>
+								<div class="col-xs-8 col-sm-9 detailP-CO">
+									<div class="priceCO">
+										<div class="col-xs-12">
+											<span>10,000</span>
+											<a href="">Xóa</a>
+											<a href="">|</a>
+											<a href="" onclick="editCartCheckout(this); return false;">Thay đổi</a>
+											<div class="clear"></div>
+										</div>
+									</div>
+									<div class="titleProductCO">
+										<div class="col-xs-12">
+											Áo thun tay dài cổ cao</span>
+										</div>
+									</div>
+									<div class="subInfoCO">
+										<div class="col-sm-8 col-xs-12">
+											Màu sắc: <span>Màu nho</span>
+										</div>
+										<div class="col-sm-4 col-xs-12">
+											Kích cỡ: <span class="sizeCO" value="L">L</span>
+										</div>
+										<div class="col-sm-4 col-xs-12">
+											Số lượng: <span class="numberProCO" value="1">1</span>
+										</div>
+										<div class="col-sm-8 col-xs-12">
+											<select name="" class="numberProCO" id="">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row rowPCheckOut">
+								<div class="col-xs-4 col-sm-3">
+									<img src="images/img-cat.jpg" alt="">
+								</div>
+								<div class="col-xs-8 col-sm-9 detailP-CO">
+									<div class="priceCO">
+										<div class="col-xs-12">
+											<span>10,000</span>
+											<a href="">Xóa</a>
+											<a href="">|</a>
+											<a href="" onclick="editCartCheckout(this); return false;">Thay đổi</a>
+											<div class="clear"></div>
+										</div>
+									</div>
+									<div class="titleProductCO">
+										<div class="col-xs-12">
+											Áo thun tay dài cổ cao</span>
+										</div>
+									</div>
+									<div class="subInfoCO">
+										<div class="col-sm-8 col-xs-12">
+											Màu sắc: <span>Màu nho</span>
+										</div>
+										<div class="col-sm-4 col-xs-12">
+											Kích cỡ: <span class="sizeCO" value="L">L</span>
+										</div>
+										<div class="col-sm-4 col-xs-12">
+											Số lượng: <span class="numberProCO" value="1">1</span>
+										</div>
+										<div class="col-sm-8 col-xs-12">
+											<select name="" class="numberProCO" id="">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row totalCO">
+								<div class="col-xs-6">Tổng tiền hàng</div>
+								<div class="col-xs-6 text-right">100,000đ</div>
+								<div class="col-xs-6">Phí giao hàng</div>
+								<div class="col-xs-6 text-right">100,000đ</div>
+								<div class="col-xs-6">Giảm giá</div>
+								<div class="col-xs-6 text-right">100,000đ</div>
+								<div class="col-xs-6">Tổng cộng</div>
+								<div class="col-xs-6 text-right">100,000đ</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input type="button" value="Đặt hàng">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
