@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Maza.vn</title>
+	<title>Maza.vn - Liên hệ</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/slick.css">
@@ -18,7 +18,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="menuMobile" onclick="showHide('.mainMenu');">
+							<div class="menuMobile" onclick="showHideMenuMobile(this);">
 								<span></span>
 								<span></span>
 								<span></span>
@@ -130,8 +130,7 @@
 										</div>
 									</li>
 									<li><a href="#">Hàng mới</a></li>
-									<li class="visible-xs"><a href="#">Tài khoản</a></li>
-									<li class="visible-xs" onclick="$('.mainMenu').hide();"><a href="#" data-toggle="modal" data-target="#logOutPopUp">Đăng xuất</a></li>
+									<li class="visible-xs"><a href="#">Đăng nhập</a></li>
 								</ul>
 							</div>
 							<div class="iconList">
@@ -146,35 +145,25 @@
 									<span class="numProducts">3</span>
 									<button>Giỏ hàng</button>
 								</div>
-								<!-- <div class="userLogin" onclick="showHideLogin();">
+								<div class="userLogin" onclick="showHideLogin();">
 									<i class="fa fa-user" aria-hidden="true"></i>
 									<button>Đăng nhập</button>
-								</div> -->
-								<div class="userLogOut" data-toggle="dropdown">
+								</div>
+								<!-- <div class="userLogOut" data-toggle="dropdown">
 									<i class="fa fa-user" aria-hidden="true"></i>
 									<button class="dropdown-toggle" type="button" data-toggle="dropdown">
 										<span>Hi, <span>Admin gaylord</span></span>
   										<span class="caret"></span>
   									</button>
   									<ul class="dropdown-menu">
-										<li><a href="accountInfo.html">Thông tin tài khoản</a></li>
+										<li><a href="#">Thông tin tài khoản</a></li>
 										<li><a href="#">Lịch sử đơn hàng</a></li>
 										<li><a href="#">Địa chỉ thanh toán</a></li>
-										<li data-toggle="modal" data-target="#logOutPopUp"><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Thoát</a></li>
+										<li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Thoát</a></li>
 									</ul>
-								</div>
+								</div> -->
 							</div>
 							<div class="clear"></div>
-							<div id="logOutPopUp" class="modal fade" role="dialog">
-								<div class="modal-dialog modal-sm">
-									<div class="modal-content">
-										<div class="modal-body">
-											<button type="button" class="closeMBCart" data-dismiss="modal">&times;</button>
-											<p>Đăng xuất thành công !</p>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -189,70 +178,45 @@
 					</div>
 				</div>
 			</div>
-			<div class="subMenuTop hidden-xs">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="s3">
-								<ul>
-									<li><span></span>Chọn hàng online</li>
-									<li><span class="delivery"></span>Giao hàng trong 24h</li>
-									<li><span class="payment"></span>Thanh toán tiện lợi</li>
-								</ul>
-							</div>
-							<div class="hotline">
-								HOTLINE: 08 6254 9999
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-				</div>
-			</div>
 		</section>
-		<section id="bannerHeader">
+		<section id="contactPage">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12">
-						<img src="images/banner-header.jpg" alt="">
-						<a href="#" class="Male">Mua đồ Nam</a>
-						<a href="#" class="Female">Sắm đồ Nữ</a>
+					<div class="col-xs-12 col-sm-5">
+						<h3>Liên hệ</h3>
+						<p>
+							Chỗ này có cái form liên hệ, mấy bạn thắc mắc gì thì liên hệ Maza, ahihi
+						</p>
+						<form action="" id="contactPage">
+							<label for="">Tiêu đề</label>
+							<input type="text" placeholder="Nhập tiêu đề">
+							<label for="">Email</label>
+							<input type="text" placeholder="Email của bạn">
+							<!-- <p class="sumAlertRQ">*Email và mật khẩu không được bỏ trống</p> -->
+							<label for="">Nội dung</label>
+							<textarea name="" id="" placeholder="Nội dung yêu cầu"></textarea>
+							<input type="button" value="Gửi liên hệ">
+						</form>
 					</div>
+					<div class="col-xs-12 col-sm-6 col-sm-offset-1">
+						<h3>Thông tin liên hệ</h3>
+						<ul>
+							<li><strong>MAZA Gò Vấp</strong></li>
+							<li>708 Quang Trung, Phường 8, Quận Gò Vấp, TP.HCM (Gần chợ Hạnh Thông Tây)</li>
+							<li><a href="http://bit.ly/mazagovap" target="_blank"><i class="fa fa-map-marker"></i>Xem bản đồ</a></li>
+						</ul>
+						<ul>
+							<li><strong>MAZA Quận 3</strong></li>
+							<li>99 Trần Quang Diệu, Phường 14, Quận 3, TP.HCM</li>
+							<li>Hotline: 08 6254 9999</li>
+							<li><a href="http://bit.ly/mazaquan3" target="_blank"><i class="fa fa-map-marker"></i>Xem bản đồ</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-4"></div>
 				</div>
 			</div>
 		</section>
-		<section id="mazaStore">
-			<div class="container">
-				<h4 class="titleSection">Tham quan Maza Store</h4>
-				<div class="storeBlock">
-					<ul class="storeBlockMain">
-						<li>
-							<button class="hoverIcon"><i class="fa fa-eye" aria-hidden="true"></i>Xem shop</button>
-							<img src="images/img-2.jpg" alt="">
-						</li>
-						<li>
-							<button class="hoverIcon"><i class="fa fa-eye" aria-hidden="true"></i>Xem shop</button>
-							<img src="images/img-2a.jpg" alt="">
-						</li>
-						<li>
-							<button class="hoverIcon"><i class="fa fa-eye" aria-hidden="true"></i>Xem shop</button>
-							<img src="images/img-2.jpg" alt="">
-						</li>
-						<li>
-							<button class="hoverIcon"><i class="fa fa-eye" aria-hidden="true"></i>Xem shop</button>
-							<img src="images/img-2a.jpg" alt="">
-						</li>
-						<li>
-							<button class="hoverIcon"><i class="fa fa-eye" aria-hidden="true"></i>Xem shop</button>
-							<img src="images/img-2.jpg" alt="">
-						</li>
-						<li>
-							<button class="hoverIcon"><i class="fa fa-eye" aria-hidden="true"></i>Xem shop</button>
-							<img src="images/img-2a.jpg" alt="">
-						</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+
 		<section id="footer">
 			<div class="container">
 				<div class="row">
@@ -331,7 +295,7 @@
 			<div class="container">
 				<div class="row footerInfo">
 					<div class="col-xs-12 col-md-3">
-						<object data="images/logo-footer.svg" type="image/svg+xml"> </object>
+						<img src="images/logo-bottom.png" alt="">
 					</div>
 					<div class="col-xs-12 col-md-9">
 						<p>
@@ -341,8 +305,7 @@
 				</div>
 			</div>
 		</section>
-
-		<!-- popUp area -->
+		!-- popUp area -->
 		<div class="popUpCart">
 			<div class="mainCart_P">
 				<ul>
@@ -375,7 +338,7 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-body">
-						<button type="button" class="closeMBCart" data-dismiss="modal">&times;</button>
+						<button type="button" class="btn btn-default closeShip" data-dismiss="modal">Đóng</button>
 						<div class="clearfix"></div>
 						<p>Miễn phí giao hàng khi mua durex -_-</p>
 					</div>
@@ -384,6 +347,7 @@
 		</div>
 		<!-- end popUp area -->
 	</div>
+
 	<script src="js/jquery-1.9.1.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/slick.min.js"></script>

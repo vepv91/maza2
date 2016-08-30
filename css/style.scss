@@ -22,7 +22,6 @@
   font-family: 'MazaHelB';
   src: url("../fonts/helveticaneuebold.ttf");
 }
-
 $imgURL: '../images';
 $bodyFont: 'Source Sans Pro', 'Open Sans', 'Roboto', sans-serif;
 $titleFontBold: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
@@ -34,7 +33,6 @@ $fontColor4: #8a8a8a;
 $borderColor: 1px solid #ddd;
 $blueColor: #3995ae;
 $redColor: #f12424;
-
 
 @mixin keyframes($animationName) {
     @-webkit-keyframes #{$animationName} {
@@ -93,7 +91,7 @@ body{
 .floatRight{float: right;}
 .floatLeft{float: left;}
 .rq-input{border: 1px solid $redColor;}
- .sumAlertRQ {color: $redColor;}
+ .sumAlertRQ {color: $redColor !important;}
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{padding: 0 10px}
 button, a, img, li, input[type="button"]{outline: none}
 input[type="text"], textarea{
@@ -159,6 +157,7 @@ select{
 			float: left;
 			outline: none;
 			height: 36px;
+			width: 125px;
 			h1{
 				text-indent: -9998px;
 				height: 0px;
@@ -168,11 +167,11 @@ select{
 		.mainMenu{ 
 			float: left;
 			margin: 10px 0 0 50px;
+			position: relative;
 			li{
 				float: left;
 				margin: 0 40px 0 0;
 				font-size: 16px;
-				position: relative;
 				&.active{
 					> a{
 						color: $redColor;
@@ -184,10 +183,24 @@ select{
 					text-transform: uppercase;
 					padding: 22px 0;
 					font-weight: 600;
+					position: relative;
 					&:hover{
 						text-decoration: underline;
 						border-bottom: none;
 					}
+					&:before{
+					position: absolute;
+					bottom: -2px;
+					left: 50%;
+					margin-left: -5px;
+					display: none;
+					content: '';
+					width: 0; 
+					height: 0; 
+					border-left: 5px solid transparent;
+					border-right: 5px solid transparent;
+					border-bottom: 5px solid #fff;		
+				}
 				}
 				.subMenu{
 					width: auto;
@@ -201,18 +214,6 @@ select{
 					box-shadow: 0 3px 25px rgba(0,0,0,.2);
 					display: none;
    					flex-direction: row;
-					&:before{
-						position: absolute;
-						top: -5px;
-						left: 40px;
-						display: block;
-						content: '';
-						width: 0; 
-						height: 0; 
-						border-left: 5px solid transparent;
-						border-right: 5px solid transparent;
-						border-bottom: 5px solid #fff;		
-					}
 					.subMenuCol{
 						float: left;
 						margin: 0 10px 0 10px;
@@ -241,7 +242,11 @@ select{
 						}
 					}
 				}
+				
 				&:hover{
+					a:before{
+						display: block;
+					}
 					.subMenu{
 						display: flex;
 					}
@@ -2592,6 +2597,7 @@ select{
 					float: none;
 					width: 100%;
 					border-bottom: $borderColor;
+					position: relative;
 					&:last-child{
 						border-bottom: none;
 					}
@@ -2612,6 +2618,13 @@ select{
 						position: static;
 						box-shadow: 0 0 0;
 						padding: 0 0px;
+						.cloneA{
+							font-weight: normal;
+							text-transform: initial;
+							padding-left: 20px;
+							border-top: 1px solid #ddd;
+							font-size: 14px;
+						}
 						h4{
 							margin-top: 0;
 							border-top: $borderColor;
@@ -3671,7 +3684,156 @@ select{
 	}
 } 
 
-
+//edit 29.08
+.storeBlockMain{
+	li{
+		position: relative;
+		.hoverIcon{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -20px 0 0 -60px;
+			background: #fff;
+			border: none;
+			cursor: pointer;
+			width: 120px;
+			height: 40px;
+			line-height: 40px;
+			font-family: $titleFontBold;
+			font-size: 16px;
+			text-transform: uppercase;
+			color: #333;
+			z-index: 5;
+			opacity: 0;
+			@include transition (all .3s linear);
+			border-radius: 3px;
+			i{
+				padding-right: 5px;
+			}
+		}
+		&:after{
+			@include transition (all .3s linear);
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 5px;
+			width: calc(100% - 10px);
+			height: 100%;
+			background: rgba(0,0,0,.7);
+			z-index: 3;
+			opacity: 0;
+		}
+		&:hover{
+			&:after{
+				opacity: 1;
+			}
+			.hoverIcon{
+				opacity: 1;
+			}
+		}
+	}
+}
+#contactPage{
+	h3{
+		font-size: 25px;
+	    margin-top: 50px;
+	    font-weight: 900;
+	    text-transform: uppercase;
+	}
+	p{
+		color: #666;
+	    font-size: 12px;
+	    margin: 0;
+	}
+	label{
+		width: 100%;
+	    font-weight: normal;
+	    font-size: 14px;
+	    text-transform: uppercase;
+	    margin-top: 15px;
+	}
+	input[type="text"]{
+		width: 100%;
+	    border: 1px solid #ddd;
+	    padding: 8px 10px;
+	    outline: none;
+	    @include transition(all .2s linear);
+	    &:hover, &:active{
+	    	border: 1px solid #3995ae;
+	    }
+	}
+	textarea{
+		width: 100%;
+	    border: 1px solid #ddd;
+	    padding: 8px 10px;
+	    outline: none;
+	    resize: none;
+	    min-height: 100px;
+	    @include transition(all .2s linear);
+	    &:hover, &:active{
+	    	border: 1px solid #3995ae;
+	    }
+	}
+	input[type="button"] {
+	    width: 180px;
+	    background: #000;
+	    color: #fafafa;
+	    padding: 8px 10px;
+	    text-align: center;
+	    border: none;
+	    margin-top: 20px;
+	    text-transform: uppercase;
+	    font-size: 16px;
+	    @include transition(all .2s linear);
+	    font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
+	    &:hover{
+	    	background: $blueColor;
+	    }
+	}
+	.sumAlertRQ {
+	    color: #f12424;
+	}
+	input[type="text"].rq-input {
+	    border: 1px solid #f12424;
+	}
+	ul{
+		margin: 0px 0 20px;
+		li{
+			color: #666;
+			margin-bottom: 2px;
+			a{
+				color: #666;
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+			i{
+				margin-right: 5px;
+			}
+		}
+	}
+}
+@media screen and (max-width: 480px){
+	.subCategory{
+		overflow-x: scroll;
+		ul{
+			white-space: nowrap;
+			li{
+			}
+		}
+	}
+	#contactPage{
+		h3{
+			margin-top: 30px;
+		}
+		label{
+			display: none;
+		}
+		input[type="text"], textarea{
+		    margin-top: 10px;
+		}
+	}
+}
 
 
 

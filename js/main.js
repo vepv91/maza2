@@ -142,24 +142,35 @@ function collapseElement(idElement){ //collapse for footer
 	else
 		$(idElement).slideUp('fast');
 };
-function menuOnMobile(){ // - please dont edit this
+function menuOnMobile(){ // - please dont edit this // edit 29.08 đổi hết cả function nha hội anh em maza đẹp chai
 	var idMenuMobile = $('.menuMobileClick');
 	idMenuMobile.find('.subMenu')
 				.closest('li')
 				.addClass('hasSubMenu');
-
+	$('.subMenu').each(function(){
+		var aParent 	=  $(this).prev('a');
+		var titleMenu 	= aParent.text();
+			hrefMenu 	= aParent.attr('href');
+		$(this).prepend('<a class="cloneA" href="'+hrefMenu+'"> Xem danh mục: '+titleMenu+'</a>');
+	}); 
+	$('.subMenuCol').each(function(){
+		var aParent 	=  $(this).find('h4 a');
+		var titleMenu 	= aParent.text();
+			hrefMenu 	= aParent.attr('href');
+		$(this).find('.subMenuList').prepend('<li><a href="'+hrefMenu+'"> Xem danh mục: '+titleMenu+'</a></li>');
+	});
 	$('.hasSubMenu > a').click(function(){
-		var thisSubMenu = $(this).closest('.hasSubMenu').find('.subMenu');
-		idMenuMobile.find('.subMenu').hide('fast');
+		var thisSubMenu = $(this).next('.subMenu');
+		$('.subMenu').hide('fast');
 		if(thisSubMenu.is(':hidden'))
 			thisSubMenu.show('fast');
 		else
 			thisSubMenu.hide('fast');
 		return false;
 	});
-	$('.subMenuCol > h4 > a').click(function(){
-		var thisSubMenu = $(this).closest('.subMenuCol').find('.subMenuList');
-		idMenuMobile.find('.subMenuList').hide('fast');
+	$('.subMenuCol > h4').click(function(){
+		var thisSubMenu = $(this).next('.subMenuList');
+		$('.subMenuList').hide('fast');
 		if(thisSubMenu.is(':hidden'))
 			thisSubMenu.show('fast');
 		else
@@ -625,7 +636,6 @@ function enterSubmitForm(){
 	});
 }
 //end new edit 24.08 
-
 showSortBy();
 onChangeSortBy();
 rightFilterList();
