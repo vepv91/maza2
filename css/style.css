@@ -3847,6 +3847,10 @@ select {
 }
 
 @media screen and (max-width: 480px) {
+  body {
+    font-family: 'MazaHel';
+  }
+
   .subCategory {
     overflow-x: scroll;
   }
