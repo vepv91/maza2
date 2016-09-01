@@ -107,6 +107,9 @@ select{
 	background: #fff;
 	border-radius: 0;
 }
+input[type="button"], button, #pageNotFound ul li a{
+	border-radius: 3px !important;
+}
 .customSelect{
 	position: relative;
 	.currentOption{
